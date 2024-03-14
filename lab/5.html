@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input>
+    <button id="first">Заблокировать</button>
+    <button id="second">Разблокировать</button>
+</body>
+<script>
+    const input = document.querySelector("input");
+    const firstButton = document.querySelector("#first");
+    const secondButton = document.querySelector("#second");
+
+    firstButton.addEventListener("click", () => {
+        input.disabled = true;
+    })
+
+    secondButton.addEventListener("click", () => {
+        input.disabled = false;
+    })
+</script>
+</html>

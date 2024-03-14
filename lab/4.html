@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input id="first">
+    <input id="second">
+    <button>Поменять</button>
+</body>
+<script>
+    const firstInput = document.querySelector("#first");
+    const secondInput = document.querySelector("#second");
+    const button = document.querySelector("button");
+
+    button.addEventListener("click", () => {
+        firstValue = firstInput.value;
+        secondValue = secondInput.value;
+
+        firstInput.value = secondValue;
+        secondInput.value = firstValue;
+    });
+</script>
+</html>
