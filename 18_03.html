@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+<script>
+    const array = [
+        {value: 1, label:"Первый вариант"}, 
+        {value: 2, label:"Второй вариант"},
+        {value: 3, label:"Третий вариант"}
+        ];
+
+    function createMenu(array, value) {
+        const select = document.createElement("select");
+
+        for (const element of array) {
+            const option = document.createElement("option");
+            option.value = element.value;
+            option.label = element.label;
+
+            if (value === element.value) {
+                option.selected = true;
+            }
+            select.append(option);
+        }
+
+        return select;
+    }
+
+
+    function convertFromArray(array){
+        const newArray = [];
+        for (const element of array) {
+            newArray.push({value: element, label: element});
+        }
+        return newArray;
+    }
+
+    function convertFromObject(object) {
+        const newArray = [];
+        for (const element of Object.entries(object)) {
+            newArray.push({value: element[0], label: element[1]});
+        }
+        return newArray;
+    }
+
+    const list = [1, 2, "Три"]
+    const object = {1: "Один", 2: "Два", 3: "Три"}
+
+    document.body.append(createMenu(convertFromArray(list), "Три"))
+    document.body.append(createMenu(convertFromObject(object), "2"))
+</script>
+</html>
